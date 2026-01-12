@@ -174,56 +174,64 @@ window.addEventListener('scroll', function() {
 
 
 <style>
-  .paco-brand {
-    display: block;
-    text-align: left; /* Căn lề trái */
-    text-decoration: none;
-    padding: 15px 0; /* Khoảng cách trên dưới */
-    max-width: 700px; /* Độ rộng phải bằng với khung nội dung bên dưới */
-    margin: 0 auto; /* Căn giữa khung bao để lề trái luôn thẳng hàng với nội dung */
-    font-family: 'Times New Roman', serif;
-    font-size: 40px;
-    font-weight: bold;
-    color: #01cb99;
-}
-	@media (max-width: 600px) {
-    .paco-brand {
-        padding: 15px 0 20px 0; /* Tăng khoảng cách phía trên lên 50px */
-        text-align: center; /* Nên căn giữa trên điện thoại để Logo nổi bật hơn */
+    /* 1. GIẢM CHIỀU CAO THANH NỀN & 2. GIẢM MÀU XANH XUỐNG CỰC MỜ (2%) */
+    .header-fixed-container {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        width: 100%;
+        /* Nền xanh biển siêu nhạt 2% và độ mờ kính mạnh */
+        background-color: rgba(240, 252, 255, 0.2); 
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(0, 203, 153, 0.05);
     }
-}
 
-   .paco-part {
-    color: #01cb99; /* Màu xanh sáng theo ý Ông */
-    font-size: 30px;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-decoration: none;
+    .paco-brand {
+        display: block;
+        text-align: left;
+        text-decoration: none;
+        /* 1. GIẢM ĐỘ CAO THANH NỀN TỐI ĐA (Chỉ để 2px padding) */
+        padding: 2px 0; 
+        max-width: 700px;
+        margin: 0 auto;
+        font-family: 'Times New Roman', serif;
+        font-size: 40px;
+        font-weight: bold;
+        color: #01cb99;
+    }
 
-    /* CHỈNH THÔNG SỐ NÀY ĐỂ DÀY KHỐI 3D (Xây dựng chiều sâu) */
-    text-shadow: 
-        1px 1px 0px #0099cc, 
-        1px 1px 0px #0099cc, 
-        1px 1px 0px #0099cc, 
-        1px 1px 0px #0099cc, 
-        1px 1px 0px #0099cc, /* Các lớp này tạo độ dày cho khối */
-        1px 1px 4px rgba(0,0,0,0.5); /* Lớp cuối là bóng đổ mềm */
-}
+    @media (max-width: 600px) {
+        .paco-brand {
+            /* 1. GIẢM ĐỘ CAO TRÊN MOBILE */
+            padding: 2px 0 5px 0; 
+            text-align: center;
+        }
+    }
 
-.books-part {
-    color: white;
-    font-size: 20px; /* Nhỏ hơn paco 1 chút */
-    font-weight: 900;
-    /* Viền xanh sẫm xung quanh chữ trắng */
-    -webkit-text-stroke: 1px #007399; 
-    
-    /* Khối 3D cho chữ BOOKS */
-    text-shadow: 
-        1px 1px 0px #007399, 
-        1px 1px 0px #007399, 
-        1px 1px 0px #007399,
-        2px 2px 4px rgba(0,0,0,0.4);
-}
+    /* GIỮ NGUYÊN 100% THÔNG SỐ LOGO GỐC CỦA ÔNG */
+    .paco-part {
+        color: #01cb99;
+        font-size: 30px;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-shadow: 
+            1px 1px 0px #0099cc, 1px 1px 0px #0099cc, 1px 1px 0px #0099cc, 
+            1px 1px 0px #0099cc, 1px 1px 0px #0099cc, 
+            1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .books-part {
+        color: white;
+        font-size: 20px;
+        font-weight: 900;
+        -webkit-text-stroke: 1px #007399; 
+        text-shadow: 
+            1px 1px 0px #007399, 1px 1px 0px #007399, 1px 1px 0px #007399,
+            2px 2px 4px rgba(0,0,0,0.4);
+    }
 
     .paco-brand:hover .paco-part, 
     .paco-brand:hover .books-part {
@@ -232,20 +240,11 @@ window.addEventListener('scroll', function() {
     }
 </style>
 
-<section class="hero-banner-section">
+<div class="header-fixed-container">
     <a href="https://tacgiathiennhan.com/" class="paco-brand">
         <span class="paco-part">PACO</span><span class="books-part">BOOKS</span>
     </a>
-</section>
-
-
-
-
-
-
-
-
-
+</div>
 
 
 
