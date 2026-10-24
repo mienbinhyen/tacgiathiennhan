@@ -353,18 +353,20 @@ window.addEventListener('scroll', function() {
         width: 100%;
         max-width: 900px; /* Ép bằng khối chuẩn */
         margin: 40px auto;
-        padding: 0; 
+        padding: 0 20px; /* Khớp lề khối chuẩn - Em ECO 2026-10-24 */
         display: flex;
         justify-content: center;
-        gap: 80px; /* Giảm gap để không đẩy lề */
+        gap: 30px; /* 3 cuốn: giảm gap để nằm gọn trong khổ */
         box-sizing: border-box; /* Khóa không cho phình ra */
     }
     .paco-catalog-item {
         text-align: center;
         flex: 1; /* Chia đều không gian */
+        min-width: 0; /* Cho phép co lại, không tràn lề */
     }
     .paco-catalog-item img {
-        height: 350px;
+        height: auto;
+        max-height: 350px;
         width: auto;
         max-width: 100%;
         border-radius: 8px;
@@ -388,11 +390,11 @@ window.addEventListener('scroll', function() {
     /* ĐIỀU CHỈNH CHO ĐIỆN THOẠI */
     @media (max-width: 600px) {
         .paco-catalog-wrapper {
-            gap: 20px; /* Mobile để gần nhau cho đẹp */
+            gap: 10px; /* Mobile để gần nhau cho đẹp */
             padding: 0 15px; /* Khớp padding khối chuẩn */
         }
         .paco-catalog-item img {
-            height: 180px;
+            max-height: 180px;
         }
         .paco-btn-detail {
             font-size: 14px;
