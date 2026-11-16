@@ -446,6 +446,7 @@ window.addEventListener('scroll', function() {
             Phần giới thiệu và thông tin đầy đủ về cuốn sách có tại trang <a href="https://duongdenbinhyen.com/sach-mien-binh-yen.html">Sách Miền Bình Yên</a> trên tủ sách PACOBOOKS.
         </p>
         <p class="tp-sign">— Tác giả Thiện Nhân —</p>
+        <div class="paco-lb"></div>
 
         <div class="tp-actions">
             <a href="https://duongdenbinhyen.com/sach-mien-binh-yen.html" class="tp-btn">XEM CHI TIẾT SÁCH</a>
@@ -743,49 +744,7 @@ window.addEventListener('load', function() {
 
 
 
-<style>
-    .paco-fixed-nav {
-        position: fixed;
-        bottom: 50px; /* Cách footer/đáy màn hình 70px */
-        left: 50%;
-        transform: translateX(-50%); /* Căn giữa màn hình */
-        display: flex;
-        justify-content: center;
-        gap: 100px; /* Dãn rộng 2 nút sang 2 bên để không che nội dung giữa */
-        width: 100%;
-        max-width: 500px; /* Giới hạn độ rộng để dễ bấm */
-        pointer-events: none; /* Để không cản trở việc click vào nội dung bên dưới */
-        z-index: 9998;
-    }
-    .paco-nav-btn-fixed {
-        pointer-events: auto; /* Kích hoạt lại click cho nút */
-        background: transparent;
-        text-decoration: none;
-        width: 35px;
-        height: 35px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .paco-nav-btn-fixed svg {
-        width: 100%;
-        height: 100%;
-    }
-</style>
 
-<div class="paco-fixed-nav">
-    <a href="javascript:history.back()" class="paco-nav-btn-fixed">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="rgba(0,0,0,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </a>
-
-    <a href="javascript:history.forward()" class="paco-nav-btn-fixed">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6L15 12L9 18" stroke="rgba(0,0,0,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </a>
-</div>
 
 
 
@@ -890,6 +849,17 @@ window.addEventListener('load', function() {
         .paco-nav-item { font-size: clamp(8px, 2.5vw, 12px); }
         .paco-nav-badge { width: clamp(32px, 9vw, 38px); height: clamp(32px, 9vw, 38px); }
     }
+    /* ===== MENU CHAN GON (13/11/2026 - Em ECO): nho nut, nho chu, thap thanh menu ===== */
+    .paco-bottom-nav { padding: 6px 12px calc(4px + env(safe-area-inset-bottom)); border-radius: 16px 16px 0 0; box-shadow: 0 -3px 12px rgba(0,0,0,0.10); align-items: flex-end; }
+    .paco-nav-item { gap: 2px; font-size: 11px; font-weight: 600; }
+    .paco-nav-badge { width: 30px; height: 30px; border-radius: 9px; box-shadow: none; }
+    .paco-nav-badge svg { width: 18px; height: 18px; }
+    .paco-nav-center-circle { width: 44px; height: 44px; margin-top: -16px; border-width: 3px; box-shadow: 0 3px 10px rgba(0,153,204,0.35); }
+    .paco-nav-center-circle svg { width: 22px; height: 22px; }
+    @media (max-width: 600px) {
+        .paco-nav-item { font-size: 10px; }
+        .paco-nav-badge { width: 28px; height: 28px; }
+    }
 </style>
 
 <body>
@@ -942,4 +912,5 @@ window.addEventListener('load', function() {
     </a>
 
 </div>
+<script src="https://duongdenbinhyen.com/like-binh-luan.js" data-api="https://script.google.com/macros/s/AKfycbzUlNC6AVsUBBYWqX3C81rf0N9Xi-VISGLrdO7Vy3naMSYY7jPc5vli4WqgsY8IvfWq/exec" data-page="https://tacgiathiennhan.com/tac-pham-mien-binh-yen.html" defer></script>
 </body>
